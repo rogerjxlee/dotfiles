@@ -1,0 +1,8 @@
+syntax on
+colorscheme base16-tomorrow-night
+
+set smartindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2

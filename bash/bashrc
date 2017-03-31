@@ -1,0 +1,15 @@
+case "$(uname -s)" in
+  Darwin)
+    # Mac OS
+    export CLICOLOR=1
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+    ;;
+  Linux)
+    # Linux
+    # add open function
+    ;;
+  CYGWIN*)
+    # Cygwin
+    alias open="cygstart"
+    ;;
+esac
