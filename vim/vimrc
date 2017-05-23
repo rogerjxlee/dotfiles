@@ -16,5 +16,4 @@ set softtabstop=2
 set nu
 
 set cursorline
-highlight ColorColumn ctermbg=18
-let &colorcolumn=join(range(81,999),",")
+set colorcolumn=81
