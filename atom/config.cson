@@ -8,7 +8,6 @@
   editor:
     invisibles:
       eol: false
-    showInvisibles: true
     softWrap: true
   "exception-reporting":
     userId: "0831cbe2-dbad-4d14-b8da-c8e382d618eb"
