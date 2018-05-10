@@ -13,3 +13,12 @@
     userId: "0831cbe2-dbad-4d14-b8da-c8e382d618eb"
   welcome:
     showOnStartup: false
+".console.python.text":
+  editor:
+    autoIndent: true
+".python.regexp.source":
+  editor:
+    tabLength: 2
+".python.source":
+  editor:
+    tabLength: 2
