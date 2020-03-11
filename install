@@ -1,0 +1,8 @@
+#!/bin/bash
+
+./install_bash
+./install_vim
+./install_base16
+./install_git
+./install_atom
+# ./install_tmux

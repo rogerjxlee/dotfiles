@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd git &&
+cp gitconfig ~/.gitconfig &&
+echo "Installed git config!" ||
+echo "Failed to install git config!"

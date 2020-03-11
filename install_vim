@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd vim &&
+cp vimrc ~/.vimrc &&
+echo "Installed vim config!" ||
+echo "Failed to installed vim config!"

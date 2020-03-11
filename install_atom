@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd atom &&
+cp * ~/.atom/ &&
+echo "Installed atom config!" ||
+echo "Failed to install atom config!"
