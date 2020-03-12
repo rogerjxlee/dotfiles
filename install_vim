@@ -1,8 +1,8 @@
 #!/bin/bash
 
-default="\e[0m"
-green="\e[32m"
-red="\e[31m"
+default=$(tput sgr 0)
+green=$(tput setaf 2)
+red=$(tput setaf 1)
 
 cd vim &&
 cp vimrc ~/.vimrc &&

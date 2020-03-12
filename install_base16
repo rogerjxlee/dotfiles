@@ -1,8 +1,8 @@
 #!/bin/bash
 
-default="\e[0m"
-green="\e[32m"
-red="\e[31m"
+default=$(tput sgr 0)
+green=$(tput setaf 2)
+red=$(tput setaf 1)
 
 rm -rf ~/.config/base16-shell &&
 mkdir -p ~/.config &&
@@ -19,6 +19,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 EOF
 
+source ~/.bashrc &&
 bash -i -c base16_tomorrow-night &&
 
 echo -e "${green}Installed base16-shell config!${default}" ||
