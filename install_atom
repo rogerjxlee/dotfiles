@@ -5,6 +5,7 @@ green="\e[32m"
 red="\e[31m"
 
 cd atom &&
-cp * ~/.atom/ &&
+cp config.cson ~/.atom &&
+# cp keymap.cson ~/.atom &&
 echo -e "${green}Installed atom config!${default}" ||
 echo -e "${red}Failed to install atom config!${default}"
