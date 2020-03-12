@@ -1,6 +1,10 @@
 #!/bin/bash
 
+default="\e[0m"
+green="\e[32m"
+red="\e[31m"
+
 cd tmux &&
 cp tmux.conf ~/.tmux.conf &&
-echo "Installed tmux config!" ||
-echo "Failed to install tmux config!"
+echo -e "${green}Installed tmux config!${default}" ||
+echo -e "${red}Failed to install tmux config!${default}"

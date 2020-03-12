@@ -1,10 +1,14 @@
 #!/bin/bash
 
+default="\e[0m"
+green="\e[32m"
+red="\e[31m"
+
 cd bash &&
 cat bashrc_default > bashrc &&
 echo -e "\n" >> bashrc &&
 cat bashrc_custom >> bashrc &&
 mv bashrc ~/.bashrc &&
 cp bash_profile ~/.bash_profile &&
-echo "Installed bash config!" ||
-echo "Failed to install bash config!"
+echo -e "${green}Installed bash config!${default}" ||
+echo -e "${red}Failed to install bash config!${default}"

@@ -1,6 +1,10 @@
 #!/bin/bash
 
+default="\e[0m"
+green="\e[32m"
+red="\e[31m"
+
 cd git &&
 cp gitconfig ~/.gitconfig &&
-echo "Installed git config!" ||
-echo "Failed to install git config!"
+echo -e "${green}Installed git config!${default}" ||
+echo -e "${red}Failed to install git config!${default}"
