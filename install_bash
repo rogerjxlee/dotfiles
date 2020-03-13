@@ -8,7 +8,9 @@ cd bash &&
 cat bashrc_default > bashrc &&
 echo -e "\n" >> bashrc &&
 cat bashrc_custom >> bashrc &&
+rm ~/.bashrc &&
 mv bashrc ~/.bashrc &&
+rm ~/.bash_profile &&
 cp bash_profile ~/.bash_profile &&
 echo -e "${green}Installed bash config!${default}" ||
 echo -e "${red}Failed to install bash config!${default}"
