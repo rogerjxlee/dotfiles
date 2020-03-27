@@ -5,7 +5,7 @@ green=$(tput setaf 2)
 red=$(tput setaf 1)
 
 cd tmux &&
-rm ~/.tmux.conf && 
+rm -f ~/.tmux.conf && 
 cp tmux.conf ~/.tmux.conf &&
 echo -e "${green}Installed tmux config!${default}" ||
 echo -e "${red}Failed to install tmux config!${default}"

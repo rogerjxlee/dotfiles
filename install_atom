@@ -5,7 +5,7 @@ green=$(tput setaf 2)
 red=$(tput setaf 1)
 
 cd atom &&
-rm ~/.atom/config.cson &&
+rm -f ~/.atom/config.cson &&
 cp config.cson ~/.atom &&
 # rm ~/.atom/keymap.cson &&
 # cp keymap.cson ~/.atom &&

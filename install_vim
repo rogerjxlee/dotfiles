@@ -5,7 +5,7 @@ green=$(tput setaf 2)
 red=$(tput setaf 1)
 
 cd vim &&
-rm ~/.vimrc &&
+rm -f ~/.vimrc &&
 cp vimrc ~/.vimrc &&
 echo -e "${green}Installed vim config!${default}" ||
 echo -e "${red}Failed to installed vim config!${default}"
