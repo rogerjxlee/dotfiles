@@ -6,7 +6,8 @@ red=$(tput setaf 1)
 
 cd atom &&
 rm -f ~/.atom/config.cson &&
-cp config.cson ~/.atom &&
+mkdir -p ~/.atom &&
+cp config.cson ~/.atom/ &&
 # rm ~/.atom/keymap.cson &&
 # cp keymap.cson ~/.atom &&
 echo -e "${green}Installed atom config!${default}" ||
