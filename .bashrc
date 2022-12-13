@@ -115,3 +115,17 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+### custom ###
+
+# includes user's personal bin directory in PATH if it exists
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
+
+# set default editor to vim
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"

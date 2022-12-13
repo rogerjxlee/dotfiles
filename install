@@ -1,8 +1,45 @@
 #!/bin/bash
 
-./install_bash
-./install_vim
-./install_tmux
-./install_base16
-./install_git
-./install_atom
+while getopts "n:e:" options; do
+  case ${options} in
+    n ) export name=${OPTARG} ;;
+    e ) export email=${OPTARG} ;;
+  esac
+done
+
+if [ -z "${name}" ]; then
+  echo "name option `-n` or env variable `name` is required"
+  exit
+fi
+
+if [ -z "${email}" ]; then
+  echo "email option `-e` or env variable `email` is required"
+  exit
+fi
+
+default=$(tput sgr 0)
+green=$(tput setaf 2)
+red=$(tput setaf 1)
+
+brew bundle install
+
+cp .bash_profile ~/.bash_profile &&
+cp .bashrc ~/.bashrc &&
+echo -e "${green}Installed bash config!${default}" ||
+echo -e "${red}Failed to install bash config!${default}"
+
+cp .zshrc ~/.zshrc &&
+echo -e "${green}Installed zsh config!${default}" ||
+echo -e "${red}Failed to install zsh config!${default}"
+
+cp .vimrc ~/.vimrc &&
+echo -e "${green}Installed vim config!${default}" ||
+echo -e "${red}Failed to install vim config!${default}"
+
+cp .tmux.conf ~/.tmux.conf &&
+echo -e "${green}Installed tmux config!${default}" ||
+echo -e "${red}Failed to install tmux config!${default}"
+
+envsubst < .gitconfig > ~/.gitconfig &&
+echo -e "${green}Installed git config!${default}" ||
+echo -e "${red}Failed to install git config!${default}"

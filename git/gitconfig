@@ -1,6 +1,0 @@
-[user]
-  email = rogerjxlee@gmail.com
-  name = Roger Lee
-
-[alias]
-  graph = log --graph --pretty=oneline --abbrev-commit
