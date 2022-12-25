@@ -21,8 +21,6 @@ default=$(tput sgr 0)
 green=$(tput setaf 2)
 red=$(tput setaf 1)
 
-brew bundle install
-
 cp .bash_profile ~/.bash_profile &&
 cp .bashrc ~/.bashrc &&
 echo -e "${green}Installed bash config!${default}" ||
