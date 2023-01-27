@@ -8,12 +8,12 @@ while getopts "n:e:" options; do
 done
 
 if [ -z "${name}" ]; then
-  echo "name option `-n` or env variable `name` is required"
+  echo "name option '-n' or env variable 'name' is required"
   exit
 fi
 
 if [ -z "${email}" ]; then
-  echo "email option `-e` or env variable `email` is required"
+  echo "email option '-e' or env variable 'email' is required"
   exit
 fi
 
