@@ -41,3 +41,7 @@ echo -e "${red}Failed to install tmux config!${default}"
 envsubst < .gitconfig > ~/.gitconfig &&
 echo -e "${green}Installed git config!${default}" ||
 echo -e "${red}Failed to install git config!${default}"
+
+cp starship.toml ~/.config/ &&
+echo -e "${green}Installed starship config!${default}" ||
+echo -e "${red}Failed to install starship config!${default}"

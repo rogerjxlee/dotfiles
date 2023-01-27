@@ -1,4 +1,10 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+case $(uname -s) in
+  Darwin)
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    ;;
+  Linux)
+    ;;
+esac
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
