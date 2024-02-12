@@ -1,4 +1,4 @@
-path+='$HOME/.local/bin'
+path+=$HOME/.local/bin
 
 case $(uname -s) in
   Darwin)
