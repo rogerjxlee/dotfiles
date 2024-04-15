@@ -7,42 +7,74 @@ while getopts "n:e:" options; do
   esac
 done
 
+if [ -f $HOME/.gitconfig ]; then
+  if [ -z "${name}" ]; then
+    export name=$(cat $HOME/.gitconfig | grep name | awk '{ $1=$2=""; gsub("^ *", "", $0); print $0 }')
+  fi
+  if [ -z "${email}" ]; then
+    export email=$(cat $HOME/.gitconfig | grep email | awk '{ $1=$2=""; gsub("^ *", "", $0); print $0 }')
+  fi
+fi
+
 if [ -z "${name}" ]; then
-  echo "name option '-n' or env variable 'name' is required"
+  echo name option '-n' or env variable 'name' is required
   exit
+else
+  echo Using name=$name
 fi
 
 if [ -z "${email}" ]; then
-  echo "email option '-e' or env variable 'email' is required"
+  echo email option '-e' or env variable 'email' is required
   exit
+else
+  echo Using email=$email
 fi
 
 default=$(tput sgr 0)
 green=$(tput setaf 2)
 red=$(tput setaf 1)
 
-cp .bash_profile ~/.bash_profile &&
-cp .bashrc ~/.bashrc &&
+echo
+
+cp .bash_profile $HOME/.bash_profile &&
+cp .bashrc $HOME/.bashrc &&
 echo -e "${green}Installed bash config!${default}" ||
 echo -e "${red}Failed to install bash config!${default}"
 
-cp .zshrc ~/.zshrc &&
+cp .zshrc $HOME/.zshrc &&
 echo -e "${green}Installed zsh config!${default}" ||
 echo -e "${red}Failed to install zsh config!${default}"
 
-cp .vimrc ~/.vimrc &&
+cp .vimrc $HOME/.vimrc &&
 echo -e "${green}Installed vim config!${default}" ||
 echo -e "${red}Failed to install vim config!${default}"
 
-cp .tmux.conf ~/.tmux.conf &&
+cp .tmux.conf $HOME/.tmux.conf &&
 echo -e "${green}Installed tmux config!${default}" ||
 echo -e "${red}Failed to install tmux config!${default}"
 
-envsubst < .gitconfig > ~/.gitconfig &&
+envsubst < .gitconfig > $HOME/.gitconfig &&
 echo -e "${green}Installed git config!${default}" ||
 echo -e "${red}Failed to install git config!${default}"
 
-mkdir -p ~/.config/
-cp starship.toml ~/.config/ &&
+mkdir -p $HOME/.config/
+cp starship.toml $HOME/.config/ &&
 echo -e "${green}Installed starship config!${default}" ||
 echo -e "${red}Failed to install starship config!${default}"
+
+case $(uname -s) in
+  Darwin )
+    export vscode_config_dir="$HOME/Library/Application Support/"
+    ;;
+  Linux )
+    case $(cat /etc/os-release | grep ^ID |sed 's/ID=//') in
+      debian )
+        export vscode_config_dir="$HOME/.config/"
+      ;;
+    esac
+    ;;
+esac
+mkdir -p $vscode_config_dir/Code/User
+cp vscode-settings.json $vscode_config_dir/Code/User/settings.json &&
+echo -e "${green}Installed vscode config!${default}" ||
+echo -e "${red}Failed to install vscode config!${default}"
