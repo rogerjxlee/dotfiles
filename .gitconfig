@@ -3,12 +3,5 @@
   email = ${email}
 [core]
   editor = vim
-[diff]
-  tool = difftastic
-  external = difft
-[difftool]
-  prompt = false
-[difftool "difftastic"]
-  cmd = difft "$LOCAL" "$REMOTE"
 [alias]
   graph = log --graph --pretty=oneline --abbrev-commit
