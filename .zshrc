@@ -24,6 +24,7 @@ if [ -f ~/.functions ]; then
   . ~/.functions
 fi
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
