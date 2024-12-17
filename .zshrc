@@ -6,6 +6,7 @@ case $(uname -s) in
     ;;
   Linux )
     alias screen-off="xset dpms force off"
+
     case $(cat /etc/os-release | grep ^ID |sed 's/ID=//') in
       debian )
         upgrade () {
@@ -18,6 +19,10 @@ case $(uname -s) in
 esac
 
 export EDITOR=vim
+
+if [ -f ~/.functions ]; then
+  . ~/.functions
+fi
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
