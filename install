@@ -67,11 +67,7 @@ case $(uname -s) in
     export vscode_config_dir="$HOME/Library/Application Support/"
     ;;
   Linux )
-    case $(cat /etc/os-release | grep ^ID |sed 's/ID=//') in
-      debian )
-        export vscode_config_dir="$HOME/.config/"
-      ;;
-    esac
+    export vscode_config_dir="$HOME/.config/"
     ;;
 esac
 mkdir -p $vscode_config_dir/Code/User
