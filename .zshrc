@@ -10,6 +10,8 @@ case $(uname -s) in
 
     case $(cat /etc/os-release | grep ^ID |sed 's/ID=//') in
       debian )
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
         upgrade () {
           sudo apt update -y
           sudo apt upgrade -y
@@ -29,7 +31,6 @@ if [ -f ~/.functions ]; then
   . ~/.functions
 fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
