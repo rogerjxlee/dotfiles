@@ -15,6 +15,10 @@ case $(uname -s) in
           sudo apt upgrade -y
         }
       ;;
+      arch )
+        alias pacman="pacman --noconfirm"
+        alias yay="yay --noconfirm"
+      ;;
     esac
     ;;
 esac
