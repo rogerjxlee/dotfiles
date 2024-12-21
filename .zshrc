@@ -5,6 +5,7 @@ case $(uname -s) in
     eval "$(/opt/homebrew/bin/brew shellenv)"
     ;;
   Linux )
+    alias open=xdg-open
     alias screen-off="xset dpms force off"
 
     case $(cat /etc/os-release | grep ^ID |sed 's/ID=//') in
