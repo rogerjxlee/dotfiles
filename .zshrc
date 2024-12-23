@@ -35,7 +35,12 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
+bindkey   '^[[1;5C' forward-word        # ctrl+right_arrow
+bindkey   '^[[1;5D' backward-word       # ctrl+left_arrow
+bindkey   "^[[H"    beginning-of-line   # home
+bindkey   "^[[F"    end-of-line         # end
+bindkey   "^[[1~"   beginning-of-line   # home in tmux
+bindkey   "^[[4~"   end-of-line         # end in tmux
+bindkey   "^[[3~"   delete-char         # delete
 
 alias ls="ls --color=auto"
