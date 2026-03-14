@@ -3,5 +3,10 @@
   email = ${email}
 [core]
   editor = vim
+[format]
+  pretty = oneline
+[log]
+  abbrevcommit = true
+  decorate = auto
 [alias]
-  graph = log --graph --pretty=oneline --abbrev-commit
+  l = log --graph -8
